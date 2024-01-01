@@ -2,26 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer base {
+    :root {
+        --theme-50: 254 242 243;
+        --theme-100: 253 230 231;
+        --theme-200: 251 208 213;
+        --theme-300: 247 170 178;
+        --theme-400: 242 122 138;
+        --theme-500: 234 84 108;
+        --theme-600: 213 41 77;
+        --theme-700: 179 29 63;
+        --theme-800: 150 27 60;
+        --theme-900: 129 26 57;
+        --theme-950: 72 9 26;
+    }
+
+    /*@media (prefers-color-scheme: dark) {*/
+    /*    :root {}*/
+    /*}*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html.lenis {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
 }
